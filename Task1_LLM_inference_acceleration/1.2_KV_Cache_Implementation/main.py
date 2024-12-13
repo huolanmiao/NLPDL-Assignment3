@@ -51,7 +51,7 @@ def golden_greedy_decoding_wo_cache(batch):
 
 if __name__ == "__main__":
     MAX_NEW_LENGTH = 100
-    bsz = 1
+    bsz = 20
     times = [0, 0]
 
     tokenizer = AutoTokenizer.from_pretrained("openai-community/gpt2")
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     original_model = AutoModelForCausalLM.from_pretrained("openai-community/gpt2", attn_implementation="eager", device_map='cuda')
     custom_model = CustomizedGPT2LMHeadModel.from_pretrained("openai-community/gpt2", attn_implementation="eager", device_map="cuda")
     # print(tokenizer(".")) # ","的ids是11
-    with open("data.txt") as f:
+    with open("./data.txt") as f:
         prompt_dataset = [i.strip() for i in f.readlines()]
 
     for i in range(0, (len(prompt_dataset) + bsz - 1) // bsz):
