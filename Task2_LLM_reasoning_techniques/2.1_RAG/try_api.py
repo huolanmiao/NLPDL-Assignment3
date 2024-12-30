@@ -12,7 +12,13 @@ response = client.chat.completions.create(
     ],
     max_tokens=10,
     temperature=0.7,
-    stream=False
+    stream=False,
+    logprobs = True,
 )
 
-print(response.choices[0].message.content)
+# ans_index = rsp[i].choices[0].logprobs["tokens"].index(" "+ sttr.group(0)[14:-1])
+# prob = np.exp(rsp[i]['choices'][0]["logprobs"]["token_logprobs"][ans_index])
+# loss = -np.log(prob) * FACTOR
+# all_losses.append(loss)
+print(response.choices[0].logprobs.tokens)
+# print(response.choices[0].message.content)

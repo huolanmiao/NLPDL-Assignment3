@@ -63,6 +63,21 @@ python run.py --models deepseek_api.py --datasets demo_gsm8k_chat_gen.py --debug
 # few-shot COT
 python run.py --models deepseek_api.py --datasets gsm8k_gen_1d7fe4.py --debug 
 
+# few-shot-4 90.07
+python run.py --models deepseek_api.py --datasets gsm8k_gen_few_shot.py --debug 
+# few-shot-4 shuffle 89.46
+python run.py --models deepseek_api.py --datasets gsm8k_gen_few_shot_shuffle.py --debug 
+# few-shot-8 89.16
+python run.py --models deepseek_api.py --datasets gsm8k_gen_few_shot_8.py --debug 
+# few-shot-8 shuffle 89.01
+python run.py --models deepseek_api.py --datasets gsm8k_gen_few_shot_8_shuffle.py --debug 
+# few-shot-8 generated default 90.30
+python run.py --models deepseek_api.py --datasets gsm8k_gen_few_shot_generated_default.py --debug 
+# few-shot-8 generated epoch10 lr1e-2  90.37
+python run.py --models deepseek_api.py --datasets gsm8k_gen_few_shot_generated_epoch10_lr_1e-2.py --debug 
+# few-shot-8 randomly sample from example pool 88.93
+python run.py --models deepseek_api.py --datasets gsm8k_gen_few_shot_8_random_sample.py --debug 
+
 # COT best prompt: "Let's think step by step."
 python run.py --models deepseek_api.py --datasets gsm8k_gen_701491.py --debug 
 
