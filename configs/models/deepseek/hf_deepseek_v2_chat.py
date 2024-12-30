@@ -1,5 +1,6 @@
 from opencompass.models import HuggingFacewithChatTemplate
 
+# api_key="sk-e39450eb1e1d4a8e825df0a7e4f5f411"
 models = [
     dict(
         type=HuggingFacewithChatTemplate,
@@ -13,6 +14,6 @@ models = [
             max_memory={i: '75GB' for i in range(8)},
             attn_implementation='eager'
         ),
-        run_cfg=dict(num_gpus=8),
+        run_cfg=dict(num_gpus=1),
     )
 ]
